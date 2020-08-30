@@ -7,7 +7,6 @@ import retrofit2.http.GET
  * Created by Akis on 30/08/2020.
  */
 interface CountryApi {
-
-    @GET("countries")
+    @GET("summary")
     fun getCountries() : Call<CountriesResponse>
 }

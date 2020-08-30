@@ -1,5 +1,7 @@
 package com.example.covidglobal.countrylist
 
+import com.example.covidglobal.models.CountryUI
+
 /**
  * Created by Akis on 28/08/2020.
  */

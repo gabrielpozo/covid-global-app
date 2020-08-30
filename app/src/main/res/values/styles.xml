@@ -5,6 +5,28 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+
+    </style>
+
+    <style name="PageTitle">
+        <item name="android:textSize">@dimen/title_screen_text_size</item>
+        <item name="android:textColor">@color/dark_grey</item>
+    </style>
+
+    <style name="ListItemTitle">
+        <item name="android:textSize">@dimen/list_item_title_text_size</item>
+        <item name="android:textColor">@color/dark_grey</item>
+    </style>
+
+    <style name="ListItemDetails">
+        <item name="android:textSize">@dimen/secondary_text_size</item>
+        <item name="android:textColor">@color/medium_grey</item>
+    </style>
+
+    <style name="ListItemContent">
+        <item name="android:textSize">@dimen/secondary_text_size</item>
+        <item name="android:textColor">@color/dark_grey</item>
     </style>
 
 </resources>

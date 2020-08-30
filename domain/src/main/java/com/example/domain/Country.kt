@@ -7,6 +7,8 @@ data class Country(
     val countryName: String?,
     val newConfirmed: Int?,
     val totalConfirmed: Int?,
-    val date: String?
+    val date: String?,
+    val countryCode: String?
+
 ) {
 }
