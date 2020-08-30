@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.covidglobal.general.SingleLiveEvent
+import com.example.usecases.GetCountries
 
 /**
  * Created by Akis on 27/08/2020.
