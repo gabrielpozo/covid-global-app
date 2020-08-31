@@ -23,7 +23,7 @@ class GetCountries(
             val resource = withContext(Dispatchers.IO) { countryRepository.getCountries() }
             when (resource.state) {
                 ResourceStatus.SUCCESS -> {
-                    val list = resource.value
+                    val list = resource.value?.sortedByDescending { it.newConfirmed }
                     when {
                         list.isNullOrEmpty() -> onError(ResourceException.NullOrEmptyResource("Null or empty list"))
                         else -> onSuccess(list)
