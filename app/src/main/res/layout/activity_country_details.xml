@@ -21,7 +21,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
-            android:text="@string/text_view1" />
+            android:text="@{country.countryName}"
+            tools:text="Netherlands"/>
+
+        <!--Date-->
 
         <TextView
             style="@style/ListItemTitle"
@@ -29,83 +32,7 @@
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
             android:layout_marginTop="@dimen/margin_extra_big"
-            android:text="@string/text_view4" />
-
-        <TextView
-            style="@style/ListItemContent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_normal"
-            android:layout_marginTop="@dimen/margin_small"
-            android:gravity="center_vertical"
-            android:text="@{country.countryName}"
-            tools:text="countryName id" />
-
-        <!--Vrn-->
-        <TextView
-            style="@style/ListItemTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_normal"
-            android:gravity="center_vertical"
-            android:text="@string/text_view1" />
-
-        <TextView
-            style="@style/ListItemContent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_normal"
-            android:layout_marginTop="@dimen/margin_small"
-            android:gravity="center_vertical"
-            android:text="@{country.newConfirmed.toString()}"
-            tools:text="0" />
-
-        <!--Country-->
-        <TextView
-            style="@style/ListItemTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_normal"
-            android:gravity="center_vertical"
-            android:text="@string/text_view1" />
-
-        <TextView
-            style="@style/ListItemContent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_normal"
-            android:layout_marginTop="@dimen/margin_small"
-            android:gravity="center_vertical"
-            android:text="@{country.countryCode.toString()}"
-            tools:text="NL" />
-
-        <!--Color-->
-        <TextView
-            style="@style/ListItemTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_normal"
-            android:gravity="center_vertical"
-            android:text="@string/text_view1" />
-
-        <TextView
-            style="@style/ListItemContent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_normal"
-            android:layout_marginTop="@dimen/margin_small"
-            android:gravity="center_vertical"
-            android:text="@{country.totalConfirmed.toString()}"
-            tools:text="Blue" />
-
-        <!--Type-->
-        <TextView
-            style="@style/ListItemTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_normal"
-            android:gravity="center_vertical"
-            android:text="@string/text_view1" />
+            android:text="@string/country_details_date" />
 
         <TextView
             style="@style/ListItemContent"
@@ -115,16 +42,16 @@
             android:layout_marginTop="@dimen/margin_small"
             android:gravity="center_vertical"
             android:text="@{country.date}"
-            tools:text="country" />
+            tools:text="02/07/2020" />
 
-        <!--Default-->
+        <!--New Confirmed-->
         <TextView
             style="@style/ListItemTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_normal"
             android:gravity="center_vertical"
-            android:text="@string/text_view1" />
+            android:text="@string/country_details_new_confirmed" />
 
         <TextView
             style="@style/ListItemContent"
@@ -133,8 +60,47 @@
             android:layout_marginStart="@dimen/margin_normal"
             android:layout_marginTop="@dimen/margin_small"
             android:gravity="center_vertical"
-            android:text="@{country.countryCode.toString()}"
-            tools:text="true" />
+            android:text="@{country.newConfirmed.toString()}"
+            tools:text="1111" />
+
+        <!--Total Confirmed-->
+        <TextView
+            style="@style/ListItemTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:gravity="center_vertical"
+            android:text="@string/country_details_total_confirmed" />
+
+        <TextView
+            style="@style/ListItemContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_normal"
+            android:layout_marginTop="@dimen/margin_small"
+            android:gravity="center_vertical"
+            android:text="@{country.totalConfirmed.toString()}"
+            tools:text="3333" />
+
+        <!--Code-->
+        <TextView
+            style="@style/ListItemTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:gravity="center_vertical"
+            android:text="@string/country_details_country_code" />
+
+        <TextView
+            style="@style/ListItemContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_normal"
+            android:layout_marginTop="@dimen/margin_small"
+            android:gravity="center_vertical"
+            android:text="@{country.totalConfirmed.toString()}"
+            tools:text="NL" />
+
 
     </LinearLayout>
 

@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">Covid Global</string>
 
-    <string name="text_view1">Some Country Name</string>
-    <string name="new_confirmed">New confirmed</string>
-    <string name="total_confirmed">Total confirmed</string>
+    <string name="country_details_title">Country Details</string>
+    <string name="country_details_date">Date</string>
+    <string name="country_details_new_confirmed">New Confirmed</string>
+    <string name="country_details_total_confirmed">Total Confirmed</string>
+    <string name="country_details_country_code">Country Code</string>
 
-    <string name="text_view4">Covid Global</string>
-    <string name="text_view5">Covid Global</string>
 </resources>
