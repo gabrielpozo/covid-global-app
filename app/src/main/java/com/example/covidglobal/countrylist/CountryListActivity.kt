@@ -11,7 +11,8 @@ import com.example.covidglobal.general.BaseActivity
 import com.example.covidglobal.models.CountryUI
 import com.example.data.CountryRepository
 import com.example.usecases.GetCountries
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.layout_country_list.*
+import kotlinx.android.synthetic.main.layout_error_view.*
 
 class CountryListActivity : BaseActivity() {
 
@@ -24,7 +25,7 @@ class CountryListActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.layout_country_list)
         viewModel = ViewModelProvider(this, viewModelFactory).get(CountryListViewModel::class.java)
 
         initAdapter()
@@ -40,25 +41,24 @@ class CountryListActivity : BaseActivity() {
         viewModel.getEvents().observe(this, Observer { event ->
             when (event) {
                 CountryListEvent.ShowContent -> showCountries()
-                //CountryListEvent.ShowEmptyListError -> showEmptyListError()
-                //CountryListEvent.ShowGeneralError -> showGeneralError()
+
+                CountryListEvent.ShowGeneralError -> showGeneralError()
                 is CountryListEvent.ShowCountryDetailsScreen -> showCountryDetailScreen(event.country)
             }
         })
     }
 
     private fun showCountries() {
-       // loading_error_view.finishLoading {
-            countries_recyclerview.visibility = View.VISIBLE
-       // }
-    }
+        countries_recyclerview.visibility = View.VISIBLE
 
-    private fun showEmptyListError() {
-        // implement retry button
     }
 
     private fun showGeneralError() {
-        // implement retry button
+        error_view.visibility = View.VISIBLE
+        error_button.setOnClickListener {
+            viewModel.onRetryButtonPressed()
+            error_view.visibility = View.GONE
+        }
     }
 
     private fun showCountryDetailScreen(country: CountryUI) {
@@ -66,13 +66,13 @@ class CountryListActivity : BaseActivity() {
     }
 
     private fun initAdapter() {
-       countriesAdapter = CountriesAdapter(
-           object: CountriesAdapter.Listener {
-               override fun onClick(country: CountryUI) {
-                   viewModel.onCountryItemClicked(country)
-               }
-           }
-       )
+        countriesAdapter = CountriesAdapter(
+            object : CountriesAdapter.Listener {
+                override fun onClick(country: CountryUI) {
+                    viewModel.onCountryItemClicked(country)
+                }
+            }
+        )
 
         countries_recyclerview.adapter = countriesAdapter
     }
