@@ -4,6 +4,7 @@
     tools:context="com.example.covidglobal.countrydetails.CountryDetailsActivity">
 
     <data>
+
         <variable
             name="country"
             type="com.example.covidglobal.models.CountryUI" />
@@ -22,7 +23,7 @@
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
             android:text="@{country.countryName}"
-            tools:text="Netherlands"/>
+            tools:text="Netherlands" />
 
         <!--Date-->
 
@@ -30,8 +31,8 @@
             style="@style/ListItemTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical"
             android:layout_marginTop="@dimen/margin_extra_big"
+            android:gravity="center_vertical"
             android:text="@string/country_details_date" />
 
         <TextView
@@ -98,7 +99,7 @@
             android:layout_marginStart="@dimen/margin_normal"
             android:layout_marginTop="@dimen/margin_small"
             android:gravity="center_vertical"
-            android:text="@{country.totalConfirmed.toString()}"
+            android:text="@{country.countryCode}"
             tools:text="NL" />
 
 
