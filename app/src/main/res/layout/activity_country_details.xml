@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.covidglobal.countrydetails.CountryDetailsActivity">
+
+    <data>
+        <variable
+            name="country"
+            type="com.example.covidglobal.models.CountryUI" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/default_screen_margin">
+
+        <!--Header-->
+        <TextView
+            style="@style/PageTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="@string/text_view1" />
+
+        <TextView
+            style="@style/ListItemTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_marginTop="@dimen/margin_extra_big"
+            android:text="@string/text_view4" />
+
+        <TextView
+            style="@style/ListItemContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_normal"
+            android:layout_marginTop="@dimen/margin_small"
+            android:gravity="center_vertical"
+            android:text="@{country.countryName}"
+            tools:text="countryName id" />
+
+        <!--Vrn-->
+        <TextView
+            style="@style/ListItemTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:gravity="center_vertical"
+            android:text="@string/text_view1" />
+
+        <TextView
+            style="@style/ListItemContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_normal"
+            android:layout_marginTop="@dimen/margin_small"
+            android:gravity="center_vertical"
+            android:text="@{country.newConfirmed.toString()}"
+            tools:text="0" />
+
+        <!--Country-->
+        <TextView
+            style="@style/ListItemTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:gravity="center_vertical"
+            android:text="@string/text_view1" />
+
+        <TextView
+            style="@style/ListItemContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_normal"
+            android:layout_marginTop="@dimen/margin_small"
+            android:gravity="center_vertical"
+            android:text="@{country.countryCode.toString()}"
+            tools:text="NL" />
+
+        <!--Color-->
+        <TextView
+            style="@style/ListItemTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:gravity="center_vertical"
+            android:text="@string/text_view1" />
+
+        <TextView
+            style="@style/ListItemContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_normal"
+            android:layout_marginTop="@dimen/margin_small"
+            android:gravity="center_vertical"
+            android:text="@{country.totalConfirmed.toString()}"
+            tools:text="Blue" />
+
+        <!--Type-->
+        <TextView
+            style="@style/ListItemTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:gravity="center_vertical"
+            android:text="@string/text_view1" />
+
+        <TextView
+            style="@style/ListItemContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_normal"
+            android:layout_marginTop="@dimen/margin_small"
+            android:gravity="center_vertical"
+            android:text="@{country.date}"
+            tools:text="country" />
+
+        <!--Default-->
+        <TextView
+            style="@style/ListItemTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:gravity="center_vertical"
+            android:text="@string/text_view1" />
+
+        <TextView
+            style="@style/ListItemContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_normal"
+            android:layout_marginTop="@dimen/margin_small"
+            android:gravity="center_vertical"
+            android:text="@{country.countryCode.toString()}"
+            tools:text="true" />
+
+    </LinearLayout>
+
+</layout>

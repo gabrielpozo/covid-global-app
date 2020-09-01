@@ -1,18 +1,19 @@
 package com.example.covidglobal.countrylist
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.covidglobal.R
 import com.example.covidglobal.adapters.CountriesAdapter
+import com.example.covidglobal.countrydetails.CountryDetailsActivity
+import com.example.covidglobal.general.BaseActivity
 import com.example.covidglobal.models.CountryUI
 import com.example.data.CountryRepository
 import com.example.usecases.GetCountries
 import kotlinx.android.synthetic.main.activity_main.*
 
-class CountryListActivity : AppCompatActivity() {
+class CountryListActivity : BaseActivity() {
 
     private val viewModelFactory = CountryListViewModelFactory(
         GetCountries(CountryRepository.getInstance())
@@ -41,7 +42,7 @@ class CountryListActivity : AppCompatActivity() {
                 CountryListEvent.ShowContent -> showCountries()
                 //CountryListEvent.ShowEmptyListError -> showEmptyListError()
                 //CountryListEvent.ShowGeneralError -> showGeneralError()
-               // is CountryListEvent.ShowCountryDetailsScreen -> showcountryDetailsScreen(event.country)
+                is CountryListEvent.ShowCountryDetailsScreen -> showCountryDetailScreen(event.country)
             }
         })
     }
@@ -60,8 +61,8 @@ class CountryListActivity : AppCompatActivity() {
         // implement retry button
     }
 
-    private fun showCountryDetailScreen() {
-        //navigate to details
+    private fun showCountryDetailScreen(country: CountryUI) {
+        CountryDetailsActivity.start(this, country)
     }
 
     private fun initAdapter() {
