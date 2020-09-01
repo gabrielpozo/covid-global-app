@@ -1,6 +1,7 @@
 package com.example.covidglobal.models
 
 import android.os.Parcelable
+import com.example.covidglobal.general.formatToViewDateTimeDefaults
 import com.example.domain.Country
 import kotlinx.android.parcel.Parcelize
 
@@ -23,11 +24,17 @@ data class CountryUI(
 ) : Parcelable
 
 fun Country.toCountryUIModel(): CountryUI {
+
+
+
     return CountryUI(
         countryName,
         newConfirmed,
         totalConfirmed,
-        date,
+        date?.formatToViewDateTimeDefaults(),
         countryCode
     )
+
 }
+
+
