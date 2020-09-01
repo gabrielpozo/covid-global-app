@@ -29,4 +29,13 @@
         <item name="android:textColor">@color/dark_grey</item>
     </style>
 
+    <style name="ErrorText">
+        <item name="android:textSize">@dimen/input_text_size</item>
+        <item name="android:textColor">@color/dark_grey</item>
+    </style>
+
+    <style name="ErrorButton">
+        <item name="android:textSize">@dimen/button_text_size</item>
+        <item name="android:textColor">@color/dark_grey</item>
+    </style>
 </resources>

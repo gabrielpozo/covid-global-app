@@ -7,4 +7,8 @@
     <string name="country_details_total_confirmed">Total Confirmed</string>
     <string name="country_details_country_code">Country Code</string>
 
+    <string name="button_text_retry">Retry</string>
+    <string name="error_message">Something went wrong :(</string>
+
+
 </resources>

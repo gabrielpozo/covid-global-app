@@ -18,4 +18,13 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:listitem="@layout/layout_country_item" />
 
+    <include
+        android:id="@+id/error_view"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        layout="@layout/layout_error_view" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
