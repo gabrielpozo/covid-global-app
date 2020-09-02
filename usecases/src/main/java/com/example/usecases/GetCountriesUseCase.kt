@@ -10,16 +10,16 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class GetCountries(
+class GetCountriesUseCase(
     private val countryRepository: CountryRepository
 
 ) : BaseUseCase<List<Country>, Void>() {
     override fun execute(
-        params: Void?,
+        scope: CoroutineScope,
         onSuccess: (List<Country>) -> Unit,
         onError: (ResourceException?) -> Unit
     ) {
-        CoroutineScope(Dispatchers.Main).launch {
+        scope.launch(Dispatchers.Main) {
             val resource = withContext(Dispatchers.IO) { countryRepository.getCountries() }
             when (resource.state) {
                 ResourceStatus.SUCCESS -> {

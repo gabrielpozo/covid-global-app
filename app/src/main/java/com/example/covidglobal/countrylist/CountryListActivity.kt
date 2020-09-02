@@ -10,14 +10,14 @@ import com.example.covidglobal.countrydetails.CountryDetailsActivity
 import com.example.covidglobal.general.BaseActivity
 import com.example.covidglobal.models.CountryUI
 import com.example.data.CountryRepository
-import com.example.usecases.GetCountries
+import com.example.usecases.GetCountriesUseCase
 import kotlinx.android.synthetic.main.layout_country_list.*
 import kotlinx.android.synthetic.main.layout_error_view.*
 
 class CountryListActivity : BaseActivity() {
 
     private val viewModelFactory = CountryListViewModelFactory(
-        GetCountries(CountryRepository.getInstance())
+        GetCountriesUseCase(CountryRepository.getInstance())
     )
     private lateinit var viewModel: CountryListViewModel
     private lateinit var countriesAdapter: CountriesAdapter
@@ -41,7 +41,6 @@ class CountryListActivity : BaseActivity() {
         viewModel.getEvents().observe(this, Observer { event ->
             when (event) {
                 CountryListEvent.ShowContent -> showCountries()
-
                 CountryListEvent.ShowGeneralError -> showGeneralError()
                 is CountryListEvent.ShowCountryDetailsScreen -> showCountryDetailScreen(event.country)
             }
