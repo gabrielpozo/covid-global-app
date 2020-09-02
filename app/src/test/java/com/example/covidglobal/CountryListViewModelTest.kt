@@ -6,7 +6,7 @@ import com.example.covidglobal.countrylist.CountryListViewModel
 import com.example.covidglobal.models.toCountryUIModel
 import com.example.domain.Country
 import com.example.domain.ResourceException
-import com.example.usecases.GetCountries
+import com.example.usecases.GetCountriesUseCase
 import com.nhaarman.mockitokotlin2.*
 import junit.framework.Assert.assertEquals
 import org.junit.Before
@@ -33,14 +33,14 @@ class CountryListViewModelTest {
 
 
     @Mock
-    private lateinit var getCountries: GetCountries
+    private lateinit var getCountriesUseCase: GetCountriesUseCase
 
     @get:Rule
     val rule: TestRule = InstantTaskExecutorRule()
 
     @Before
     fun setUp() {
-        viewModel = CountryListViewModel(getCountries)
+        viewModel = CountryListViewModel(getCountriesUseCase)
         viewModelSpy = spy(viewModel)
     }
 
@@ -67,7 +67,7 @@ class CountryListViewModelTest {
 
         val countries = listOf(country)
 
-        whenever(getCountries.execute(anyOrNull(), any(), any())).thenAnswer { invocation ->
+        whenever(getCountriesUseCase.execute(anyOrNull(), any(), any())).thenAnswer { invocation ->
             val callback =
                 invocation.arguments[USE_CASE_ON_SUCCESS_ARGUMENT] as (List<Country>) -> Unit
             callback.invoke(countries)
@@ -87,7 +87,7 @@ class CountryListViewModelTest {
         // given
         val resourceException: ResourceException = ResourceException.RemoteResponseError("")
 
-        whenever(getCountries.execute(anyOrNull(), any(), any())).thenAnswer { invocation ->
+        whenever(getCountriesUseCase.execute(anyOrNull(), any(), any())).thenAnswer { invocation ->
             val callback =
                 invocation.arguments[USE_CASE_ON_ERROR_ARGUMENT] as (ResourceException?) -> Unit
             callback.invoke(resourceException)
