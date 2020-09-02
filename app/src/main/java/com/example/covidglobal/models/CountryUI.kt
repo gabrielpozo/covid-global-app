@@ -24,9 +24,6 @@ data class CountryUI(
 ) : Parcelable
 
 fun Country.toCountryUIModel(): CountryUI {
-
-
-
     return CountryUI(
         countryName,
         newConfirmed,

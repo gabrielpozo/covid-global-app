@@ -26,7 +26,7 @@ class CountryListViewModel(private val getCountries : GetCountries) : ViewModel(
         loadCountries()
     }
 
-    private fun loadCountries() {
+    fun loadCountries() {
         getCountries.execute(
             onSuccess = { list: List<Country> ->
                 countriesLiveData.value = list.map { it.toCountryUIModel() }
